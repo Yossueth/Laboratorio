@@ -55,13 +55,13 @@ const eliminar =async (req , res) => {
     }
 }
 
-
 const editar = async (req , res) => {
   try {
     const{id} =req.params;
     const patron = '/[a-zA-Z]/';
     const patronNumero = '/[0-9]/';
     const {name, precio, cantidad, fecha_de_vencimiento} = req.body
+    let productos = await leerData()
     const productoIndex=productos.findIndex(productos => productos.id === productos.parseInt(id))
 
     if (productoIndex === -1) {
@@ -79,8 +79,11 @@ const editar = async (req , res) => {
     if (fecha_de_vencimiento !== fecha_de_vencimiento.macht(patronNumero) ) {
         res.status(404).json({message:"debe de ingresar numeros"})
     }
+    //inserte el await de escribir
+    res.status(200).json({message:"El producto a sido editado"})
   } catch (error) {
-    
+    console.error('Error al editar el producto:', error);
+    res.status(500).json({ message: 'Error interno del servidor.' });
   }
 }
 
