@@ -28,7 +28,7 @@ const getProductsId = async (req, res) => {
       (productos) => productos.id === parseInt(id)
     );
 
-    if (productsIndex === -1) { 
+    if (productsIndex === -1) {
       return res.status(404).json({ messge: "producto no encontrado" });
     }
     const producto = inv.Productos[productsIndex];
@@ -39,31 +39,33 @@ const getProductsId = async (req, res) => {
 };
 
 const addProduct = async (req, res) => {
-  const {name, precio, cantidad, fecha_de_vencimiento} = req.body
-  //validacion para que sea obligatorio el guardado de el post
+  const { name, precio, cantidad, fecha_de_vencimiento } = req.body;
+
   if (!name || !precio || !cantidad || !fecha_de_vencimiento) {
-      return res.status(400).json({
-          message: 'Todos los datos son obligatorios: name y precio'
-      })
+    return res.status(400).json({
+      message: "Todos los datos son obligatorios: name y precio",
+    });
   }
   try {
     const productos = await leerData();
 
-      const newProducto = {
-          id: productos.Productos.length + 1,
-          name,
-          cantidad,
-          precio,
-          fecha_de_vencimiento
-      };  
+    const newProducto = {
+      id: productos.Productos.length + 1,
+      name,
+      cantidad,
+      precio,
+      fecha_de_vencimiento,
+    };
 
-      productos.Productos.push(newProducto);
-      const jsonData = JSON.stringify(productos, null, 2);
-      await fs.promises.writeFile(filePath, jsonData);
-      res.status(201).json(newProducto);
+    productos.Productos.push(newProducto);
+    const jsonData = JSON.stringify(productos, null, 2);
+    await fs.promises.writeFile(filePath, jsonData);
+    res.status(201).json(newProducto);
   } catch (error) {
-      res.status(500).json({ message: 'Error al crear el producto', error: error.message });
+    res
+      .status(500)
+      .json({ message: "Error al crear el producto", error: error.message });
   }
 };
 
-module.exports = { getProducts, getProductsId, addProduct};
+module.exports = { getProducts, getProductsId, addProduct };
