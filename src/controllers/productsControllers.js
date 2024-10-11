@@ -41,13 +41,14 @@ const getProductsId = async (req, res) => {
 const eliminar =async (req , res) => {
     try {
         const{id} =req.params;
+        let productos = await leerData()
         const productoIndex=productos.findIndex(productos => productos.id === productos.parseInt(id))
 
         if (productoIndex === -1) {
             res.status(404).json({message:"No se encontro el producto"})
         }
         productos.splice(productoIndex , 1);
-
+        //inserte await escribir
         res.status(200).json({message:"El producto a sido elimiado"})
     } catch (error) {
         console.error('Error al eliminar el producto:', error);
