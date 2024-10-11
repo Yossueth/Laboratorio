@@ -84,4 +84,4 @@ const editar = async (req , res) => {
   }
 }
 
-module.exports = { getProducts, getProductsId, eliminar, editar };
+module.exports = { getProducts, getProductsId, eliminar, editar};
