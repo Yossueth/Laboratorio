@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const productsRoutes = require("../routes/productsRoutes");
+const productsRoutes = require("./src/routes/produtsRoutes");
 
 const PORT = process.env.PORT || 3000;
 
@@ -12,5 +12,5 @@ app.use(express.json());
 app.use("/products", productsRoutes);
 
 app.listen(PORT, () => {
-  console.log("servidor corriendo en http://localhost:${PORT}");
+  console.log(`servidor corriendo en http://localhost:${PORT}`);
 });
