@@ -14,6 +14,18 @@ La función getProductsId se encarga de manejar las solicitudes para obtener un 
 4. addProduct
 La función addProduct permite agregar un nuevo producto a la lista existente. Primero valida la entrada para asegurarse de que los datos del producto sean correctos, luego crea un nuevo objeto de producto, lo agrega a la lista y finalmente guarda los cambios en el archivo JSON.
 
+5. editar
+Por medio de una funcion asyncrona  estariamos utilizan al leer data por medio del await que es una promesa a leerData() y  a writeFile() .
+estamos usando una constante patron para ingresar expreciones regulares y asi poder validar que solo sea texto y lo mismo con patronNumero que estaria para ayudarnos a validar solo numeros todo con test().
+Por medio de un id y usando findIndex para buscarlo entre los productos que tenganmos en el data.json
+
+6. eliminar
+Por medio de una funcion asyncrona  estariamos utilizan al leer data por medio del await que es una promesa a leerData() y  a writeFile() .
+Por medio de un id y usando findIndex para buscarlo entre los productos que tenganmos en el data.json
+Utilizando splice para ayudarnos a eliminar .
+Usamos json.stringify para cambiar un objeto o valor de JavaScript en una cadena de texto JSON
+
+
 
 Instrucciones de Uso:
 

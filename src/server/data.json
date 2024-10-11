@@ -13,13 +13,6 @@
       "cantidad": 45,
       "precio": 3457,
       "fecha_de_vencimiento": "15/10/2023"
-    },
-    {
-      "id": 3,
-      "name": "cocain",
-      "cantidad": 45,
-      "precio": 2000,
-      "fecha_de_vencimiento": "30/1/2222"
     }
   ]
 }
