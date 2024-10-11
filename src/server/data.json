@@ -1,11 +1,18 @@
 {
-    "Productos":[
-        {
-            "id": 1,
-            "name": "arros mr.maximo 1Kg",
-            "canidad": 21,
-            "precio": "¢1000",
-            "fecha_de_vencimiento": "12/10/2023"
-          }
-    ]
+  "Productos": [
+    {
+      "id": 1,
+      "name": "arros mr.maximo 1Kg",
+      "canidad": 21,
+      "precio": "¢1000",
+      "fecha_de_vencimiento": "12/10/2023"
+    },
+    {
+      "id": 2,
+      "name": "cafe",
+      "cantidad": 45,
+      "precio": 3457,
+      "fecha_de_vencimiento": "15/10/2023"
+    }
+  ]
 }
