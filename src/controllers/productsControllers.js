@@ -28,7 +28,7 @@ const getProductsId = async (req, res) => {
       (productos) => productos.id === parseInt(id)
     );
 
-    if (!productsIndex) {
+    if (!productsIndex === -1) {
       return res.status(404).json({ messge: "producto no encontrado" });
     }
     const producto = inv.Productos[productsIndex];
